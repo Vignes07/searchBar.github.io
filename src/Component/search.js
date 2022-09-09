@@ -18,23 +18,6 @@ function Search({ data }) {
     }
   };
 
-  // function escapeRegExp(text) {
-  //   return text.replace(/[-[\]{}()*+?.,\\^$|#\\s]/g, "\\$&");
-  // }
-
-  // function boldMe(input, text) {
-  //   // const regExString = escapeRegExp(text);
-  //   const regex = new RegExp(input, "g");
-  //   let output = input.replace(regex, `<b>${text}</b>`);
-  //   console.log(output);
-  //   return output;
-  // }
-
-  // var myDev = document.getElementById("result");
-  // if (myDev != null) {
-  //   myDev.innerHTML = boldMe(myDev.innerHTML, search);
-  // }
-
   return (
     <>
       <div className="inputDiv">
@@ -44,13 +27,11 @@ function Search({ data }) {
           onChange={handleChange}
         />
       </div>
-      {result.length > 0 && (
-        <div id="result">
-          {result.map((value, key) => {
-            return <div key={key}>{value.name}</div>;
-          })}
-        </div>
-      )}
+      <div id="result">
+        {result.map((value, index) => {
+          return <div key={index}>{value.name}</div>;
+        })}
+      </div>
     </>
   );
 }
